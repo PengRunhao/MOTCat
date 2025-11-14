@@ -190,8 +190,10 @@ def train(datasets: tuple, cur: int, args: Namespace):
     print('\nSetup EarlyStopping...', end=' ')
     if args.early_stopping:
         early_stopping = EarlyStopping(warmup=0, patience=10, stop_epoch=20, verbose = True)
+        print("Done!")
     else:
         early_stopping = None
+        print("Not set EarlyStopping!")
     
     print('\nSetup Validation C-Index Monitor...', end=' ')
     monitor_cindex = Monitor_CIndex()

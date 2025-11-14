@@ -99,7 +99,7 @@ parser.add_argument('--early_stopping',  action='store_true',
 
 ### MOTCat Parameters
 parser.add_argument('--use_micro_batch', action='store_true',
-                    default=False, help='Enable micro-batching')
+                    default=True, help='Enable micro-batching')
 parser.add_argument('--bs_micro',      type=int, default=16384,
                     help='The Size of Micro-batch (Default: 16384)')
 parser.add_argument('--ot_impl', 			 type=str, default='pot-uot-l2',
@@ -299,9 +299,9 @@ def main(args):
         len(summary_all_folds), result_cindex.mean(), result_cindex.std(), result_cindex.std(ddof=1)))
 
 if __name__ == "__main__":
-    start = timer()
+    start = timer()     # 记录开始时间
     results = main(args)
-    end = timer()
+    end = timer()       # 记录结束时间
     print("finished!")
     print("end script")
     print('Script Time: %f seconds' % (end - start))

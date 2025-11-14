@@ -2,14 +2,13 @@
 ## BLCA
 ```bash
 CUDA_VISIBLE_DEVICES=0 python main.py \
---data_root_dir /path/to/BLCA/x20 \
+--data_root_dir /mnt/32TB/prh/proj/wsi_data/TCGA_BLCA \
 --split_dir tcga_blca \
 --model_type motcat \
 --use_micro_batch \
 --bs_micro 256 \
 --ot_impl pot-uot-l2 \
 --ot_reg 0.05 --ot_tau 0.5 \
---which_splits 5foldcv \
 --apply_sig
 ```
 
@@ -23,7 +22,6 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
 --bs_micro 256 \
 --ot_impl pot-uot-l2 \
 --ot_reg 0.1 --ot_tau 0.5 \
---which_splits 5foldcv \
 --apply_sig
 ```
 
